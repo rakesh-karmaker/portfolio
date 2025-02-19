@@ -1,0 +1,29 @@
+.btn {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.primary-btn:hover {
+  background-color: var(--light-black);
+  color: var(--white);
+}
+
+.secondary-btn {
+  background-color: var(--light-black);
+  color: var(--white);
+}
+
+.secondary-btn:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
