@@ -1,24 +1,33 @@
-import SecondaryBtn from "@/components/ui/secondaryBtn/SecondaryBtn";
+import { SecondaryBtn } from "@/components/ui/btns/Btns";
 import { NavLink } from "react-router-dom";
 
+import "./header.css";
+
+// a header component for the website's navbar
 const Header = () => {
   return (
     <header>
       <nav>
-        <h1 className="logo">Rakesh</h1>
+        <NavLink to="/" className="logo">
+          Rakesh
+        </NavLink>
         <NavLinks />
-        <SecondaryBtn href="/contact">Contact</SecondaryBtn>
+        <SecondaryBtn link="/contact">Contact</SecondaryBtn>
       </nav>
     </header>
   );
 };
 
+// a menu component to use in the header
 const NavLinks = () => {
   return (
     <menu className="nav-links">
       <NavLink to="/">Home</NavLink>
-      <NavLink to="/about">About me</NavLink>
+      <NavLink to="/services">Services</NavLink>
       <NavLink to="/projects">Projects</NavLink>
+      <NavLink to="/about">About</NavLink>
+      <NavLink to="/contact">Contact</NavLink>
+      {/* ...add more links if want */}
     </menu>
   );
 };

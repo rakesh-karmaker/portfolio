@@ -1,11 +1,9 @@
 import Hero from "@/components/hero/Hero";
-import { PrimaryBtn, SecondaryBtn } from "@/components/ui/btns/Btns";
 
-const Home = () => {
+const Home = ({ section }) => {
+  console.log(section);
   return (
     <main className="home">
-      <PrimaryBtn link="/about">About me</PrimaryBtn>
-      <SecondaryBtn link="/projects">Projects</SecondaryBtn>
       <Hero />
     </main>
   );
