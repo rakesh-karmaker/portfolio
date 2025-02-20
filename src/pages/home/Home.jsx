@@ -1,5 +1,7 @@
 import Hero from "@/components/hero/Hero";
+import "./home.css";
 
+// the home page
 const Home = ({ section }) => {
   console.log(section);
   return (

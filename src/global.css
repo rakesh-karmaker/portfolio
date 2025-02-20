@@ -34,10 +34,19 @@ body {
   --nav-height: 80px;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
 h1,
 h2,
 h3 {
   color: var(--white);
+}
+
+h1 {
+  font-weight: 600;
 }
 
 p {
