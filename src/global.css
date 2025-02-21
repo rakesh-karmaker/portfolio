@@ -68,3 +68,28 @@ a {
 .line {
   background-color: var(--lighter-white);
 }
+
+@media screen and (max-width: 1650px) {
+  body {
+    --max-elements-width: 90vw;
+    --nav-height: 4.5rem;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  body {
+    --nav-height: 4rem;
+  }
+}
+
+@media screen and (max-width: 1450px) {
+  body {
+    --nav-height: 3.7rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    --nav-height: 70px;
+  }
+}

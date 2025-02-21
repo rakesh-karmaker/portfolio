@@ -6,20 +6,23 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  /* gap: 5rem; */
   text-align: center;
-  height: 100%;
-  min-height: calc(100vh - var(--nav-height));
+  height: calc(100vh - var(--nav-height));
+  min-height: 100%;
+  font-size: 1rem;
+  max-height: 1000px;
 }
 
 .hero-intro {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1em;
   align-items: center;
   height: calc(75vh - var(--nav-height) - 100px);
   justify-content: center;
   position: relative;
+
+  max-height: 1000px;
 }
 
 .location {
@@ -31,12 +34,12 @@
   justify-content: center;
 
   font-weight: 500;
-  font-size: 21px;
+  font-size: 1.2em;
   line-height: 31px;
 }
 
 .hero-heading {
-  font-size: 85px;
+  font-size: 5.3em;
   line-height: 85px;
 }
 
@@ -61,4 +64,30 @@
     )
     /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
   filter: blur(84.25px);
+}
+
+@media screen and (max-width: 1650px) {
+  .hero {
+    font-size: 0.8rem;
+  }
+  .hero-heading {
+    line-height: 65px;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .hero {
+    font-size: 0.7rem;
+  }
+
+  .hero-heading {
+    line-height: 55px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .hero {
+    font-size: 0.6rem;
+    min-height: 450px;
+  }
 }

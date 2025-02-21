@@ -49,3 +49,34 @@ header > nav {
 .nav-links a:hover::after {
   width: 100%;
 }
+
+.nav-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-click {
+  text-decoration: none;
+  /* padding: 0.5rem 1rem; */
+  font-weight: 500;
+  height: 38px;
+  width: 46px;
+  font-size: 1.2rem;
+  transition: 0.25s;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  outline: none;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--gray);
+  color: var(--white);
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 1500px) {
+  header nav .secondary-btn {
+    font-size: 0.9rem;
+  }
+}

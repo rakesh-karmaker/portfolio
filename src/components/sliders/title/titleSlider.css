@@ -1,5 +1,5 @@
 .title-slider {
-  font-size: 85px;
+  font-size: 5.3rem;
   font-weight: 600;
   display: flex;
   align-items: flex-start;
@@ -31,4 +31,33 @@
 
 .word-wrapper {
   margin: 0 auto;
+}
+
+@media screen and (max-width: 1650px) {
+  .title-slider {
+    font-size: 4.24rem;
+    line-height: 65px;
+  }
+
+  .ticker {
+    height: 80px;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .title-slider {
+    font-size: 3.8rem;
+    line-height: 55px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .title-slider {
+    font-size: 3rem;
+    line-height: 45px;
+  }
+
+  .ticker {
+    height: 60px;
+  }
 }
