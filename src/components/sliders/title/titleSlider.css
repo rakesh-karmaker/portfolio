@@ -61,3 +61,25 @@
     height: 60px;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .title-slider {
+    font-size: 2.5rem;
+    line-height: 35px;
+  }
+
+  .ticker {
+    height: 50px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .title-slider {
+    font-size: 2rem;
+    line-height: 25px;
+  }
+
+  .ticker {
+    height: 40px;
+  }
+}

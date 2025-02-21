@@ -7,7 +7,7 @@ const UserLayout = () => {
     <>
       <Header />
       <Outlet />
-      <IconBar />
+      {window.innerWidth > 800 && <IconBar />}
     </>
   );
 };

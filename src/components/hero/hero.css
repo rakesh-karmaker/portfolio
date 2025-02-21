@@ -51,6 +51,8 @@
 .hero-btns {
   display: flex;
   gap: 0.9em;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .hero-bg {
@@ -89,5 +91,27 @@
   .hero {
     font-size: 0.6rem;
     min-height: 450px;
+  }
+  .hero-intro {
+    min-height: 350px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .hero {
+    font-size: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .hero-bg {
+    width: 90vw;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .hero-heading {
+    font-size: 4.7em;
+    line-height: 40px;
   }
 }

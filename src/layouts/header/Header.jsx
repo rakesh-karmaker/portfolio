@@ -39,12 +39,12 @@ const Header = () => {
         <NavLink to="/" className="logo">
           Rakesh
         </NavLink>
-        <NavType isOpen={isOpen} />
+        <NavType isOpen={isOpen} setIsOpen={setIsOpen} />
         <div className="nav-actions">
           <SecondaryBtn link="/contact">Contact</SecondaryBtn>
           {window.innerWidth <= 800 && (
             <button className="nav-click" onClick={() => setIsOpen(!isOpen)}>
-              {isOpen ? <RxHamburgerMenu /> : <RxCross2 />}
+              {isOpen ? <RxCross2 /> : <RxHamburgerMenu />}
             </button>
           )}
         </div>
@@ -53,7 +53,7 @@ const Header = () => {
   );
 };
 
-const NavType = ({ isOpen }) => {
+const NavType = ({ isOpen, setIsOpen }) => {
   if (window.innerWidth > 800) {
     return (
       <menu className="nav-links">
@@ -63,6 +63,12 @@ const NavType = ({ isOpen }) => {
   } else {
     return (
       <menu className={"mobile-nav" + (isOpen ? " open" : "")}>
+        <div className="mobile-nav-action">
+          <p className="title">Menu</p>
+          <button className="nav-click" onClick={() => setIsOpen(!isOpen)}>
+            <RxCross2 />
+          </button>
+        </div>
         <NavLinks />
       </menu>
     );
