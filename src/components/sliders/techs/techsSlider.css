@@ -3,8 +3,8 @@
   text-align: center;
   margin-bottom: 0.5em;
 
-  color: var(--light-gray);
-  font-weight: 500;
+  color: var(--light-white);
+  font-weight: 400;
 }
 .techs-container {
   position: relative;

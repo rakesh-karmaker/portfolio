@@ -8,7 +8,7 @@ import TechsSwiper from "@/components/sliders/techs/TechsSlider";
 const Hero = () => {
   return (
     <>
-      <section className="hero">
+      <section className="hero section" id="home">
         <HeroIntro />
         <TechsSwiper />
       </section>

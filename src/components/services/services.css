@@ -1,0 +1,126 @@
+.services-container {
+  width: 100%;
+  height: 100%;
+  max-width: var(--max-elements-width);
+  align-self: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10vh;
+  gap: 5em;
+}
+
+.services-container p {
+  font-size: 1.1em;
+  line-height: 30px;
+}
+
+.services-info-container {
+  max-width: 670px;
+  height: auto;
+  position: relative;
+}
+
+.services-info {
+  position: sticky;
+  top: 5.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.services-info > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.services {
+  max-width: 780px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-top: 25px;
+}
+
+.service {
+  display: flex;
+  padding-bottom: 40px;
+  padding-right: 40px;
+  position: relative;
+  cursor: pointer;
+}
+
+.service::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--lightest-white);
+}
+
+.service > div {
+  display: flex;
+  gap: 25px;
+  transition: 0.25s;
+}
+
+.service:hover > div {
+  opacity: 0.8;
+  translate: 40px 0;
+}
+
+.service .icon {
+  font-size: 3em;
+}
+
+.service h3 {
+  font-size: 2.4em;
+  line-height: 42px;
+  margin-bottom: 0.5em;
+}
+
+@media screen and (max-width: 1450px) {
+  .services-container p {
+    font-size: 1em;
+    line-height: 27px;
+  }
+
+  .services-info .section-heading {
+    font-size: 4.1em;
+  }
+
+  .service h3 {
+    font-size: 2em;
+    line-height: 32px;
+    margin-bottom: 0.5em;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .services-container {
+    flex-direction: column;
+  }
+
+  .services-info {
+    position: static;
+    top: 0;
+  }
+
+  .services {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .service > div {
+    flex-direction: column;
+  }
+  .service {
+    padding-right: 0;
+  }
+  .service:hover > div {
+    translate: 0 0;
+  }
+}

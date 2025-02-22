@@ -69,6 +69,11 @@ a {
   background-color: var(--lighter-white);
 }
 
+.section-heading {
+  font-size: 5.56rem;
+  font-weight: 500;
+}
+
 @media screen and (max-width: 1650px) {
   body {
     --max-elements-width: 90vw;

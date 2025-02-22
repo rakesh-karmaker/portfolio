@@ -43,7 +43,12 @@ const Header = () => {
         <div className="nav-actions">
           <SecondaryBtn link="/contact">Contact</SecondaryBtn>
           {window.innerWidth <= 800 && (
-            <button className="nav-click" onClick={() => setIsOpen(!isOpen)}>
+            <button
+              className="nav-click"
+              onClick={() => setIsOpen(!isOpen)}
+              type="button"
+              aria-label="open menu"
+            >
               {isOpen ? <RxCross2 /> : <RxHamburgerMenu />}
             </button>
           )}
@@ -65,7 +70,12 @@ const NavType = ({ isOpen, setIsOpen }) => {
       <menu className={"mobile-nav" + (isOpen ? " open" : "")}>
         <div className="mobile-nav-action">
           <p className="title">Menu</p>
-          <button className="nav-click" onClick={() => setIsOpen(!isOpen)}>
+          <button
+            className="nav-click"
+            onClick={() => setIsOpen(!isOpen)}
+            type="button"
+            aria-label="close menu"
+          >
             <RxCross2 />
           </button>
         </div>

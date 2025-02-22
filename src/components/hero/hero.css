@@ -49,6 +49,7 @@
 }
 
 .hero-btns {
+  margin-top: 5px;
   display: flex;
   gap: 0.9em;
   flex-wrap: wrap;

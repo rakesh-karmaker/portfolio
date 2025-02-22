@@ -1,3 +1,4 @@
+import { techs } from "@/services/data";
 import "./techsSlider.css";
 
 const TechsSwiper = () => {
@@ -20,27 +21,5 @@ const TechsSwiper = () => {
     </div>
   );
 };
-
-// list of techs i use
-const techs = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "ReactJS",
-  "Node",
-  "Express",
-  "Bootstrap",
-  "jQuery",
-  "PHP",
-  "MySQL",
-  "MongoDB",
-  "Git",
-  "GitHub",
-  "Figma",
-  "WordPress",
-  "C",
-  "C++",
-  "Python",
-];
 
 export default TechsSwiper;
