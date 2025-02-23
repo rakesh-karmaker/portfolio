@@ -2,6 +2,7 @@ import Hero from "@/components/hero/Hero";
 import "./home.css";
 import Services from "@/components/services/Services";
 import { useEffect, useRef } from "react";
+import Projects from "@/components/projects/Projects";
 
 // the home page
 const Home = ({ section }) => {
@@ -11,8 +12,6 @@ const Home = ({ section }) => {
     if (!section || !pageRef.current) {
       return;
     }
-
-    console.log(section);
 
     const ele = document.getElementById(section);
     setTimeout(() => {
@@ -26,6 +25,7 @@ const Home = ({ section }) => {
     <main className="home" ref={pageRef}>
       <Hero />
       <Services />
+      <Projects />
     </main>
   );
 };

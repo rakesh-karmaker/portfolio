@@ -1,34 +1,24 @@
-import { FaFacebook } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import { IoLogoLinkedin } from "react-icons/io";
-import { FaDribbble } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { iconData } from "@/services/data";
 
 import "./iconBar.css";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
-const IconBar = () => {
-  const iconData = [
-    {
-      title: "Facebook",
-      link: "https://www.facebook.com/rakesh.karmaker.980",
-      icon: <FaFacebook />,
-    },
-    {
-      title: "Github",
-      link: "https://github.com/rakesh-karmaker",
-      icon: <FaGithub />,
-    },
-    {
-      title: "Linkedin",
-      link: "https://www.linkedin.com/in/rakesh-karmaker-a15849322/",
-      icon: <IoLogoLinkedin />,
-    },
-    {
-      title: "Dribbble",
-      link: "https://dribbble.com/Rakesh_Karmaker",
-      icon: <FaDribbble />,
-    },
-  ];
+const IconBar = ({ start }) => {
+  const lineRef = useRef(null);
+  useGSAP(() => {
+    if (start) {
+      const iconTimeline = gsap.timeline();
+      iconTimeline.to(lineRef.current, { height: "80px", duration: 0.5 });
+      iconTimeline.to(".icon-bar a", {
+        scale: 1,
+        duration: 0.5,
+        stagger: -0.25,
+      });
+    }
+  }, [start]);
 
   return (
     <aside className="icon-bar">
@@ -39,13 +29,14 @@ const IconBar = () => {
             key={icon.title}
             target="_blank"
             rel="noopener noreferrer"
+            className="icon"
           >
             <p className="tooltip">{icon.title}</p>
             {icon.icon}
           </Link>
         );
       })}
-      <div className="icon-line"></div>
+      <div className="icon-line" ref={lineRef}></div>
     </aside>
   );
 };

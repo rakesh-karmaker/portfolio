@@ -11,6 +11,9 @@ import Home from "./pages/home/Home";
 // import layouts
 import UserLayout from "./layouts/UserLayout";
 
+// import contexts
+import { RenderProvider } from "./contexts/RenderContext.jsx";
+
 // create a router to navigate through the website
 const router = createBrowserRouter([
   {
@@ -19,7 +22,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <UserLayout />,
+        element: (
+          <RenderProvider>
+            <UserLayout />
+          </RenderProvider>
+        ),
         children: [
           { path: "/", element: <Home section="home" /> },
           { path: "/services", element: <Home section="services" /> },
