@@ -5,13 +5,18 @@ import "./iconBar.css";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useRender } from "@/contexts/RenderContext";
 
-const IconBar = ({ start }) => {
+const IconBar = () => {
   const lineRef = useRef(null);
+  const { start } = useRender();
   useGSAP(() => {
     if (start) {
       const iconTimeline = gsap.timeline();
-      iconTimeline.to(lineRef.current, { height: "80px", duration: 0.5 });
+      iconTimeline.to(lineRef.current, {
+        height: "80px",
+        duration: 0.5,
+      });
       iconTimeline.to(".icon-bar a", {
         scale: 1,
         duration: 0.5,

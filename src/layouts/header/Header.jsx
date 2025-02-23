@@ -4,7 +4,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { RxCross2 } from "react-icons/rx";
 
 import "./header.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // a header component for the website's navbar
 const Header = () => {
@@ -33,6 +33,12 @@ const Header = () => {
     }
   });
 
+  useEffect(() => {
+    document.querySelector("main").addEventListener("click", () => {
+      setIsOpen(false);
+    });
+  }, []);
+
   return (
     <header>
       <nav>
@@ -41,7 +47,9 @@ const Header = () => {
         </NavLink>
         <NavType isOpen={isOpen} setIsOpen={setIsOpen} />
         <div className="nav-actions">
-          <SecondaryBtn link="/contact">Contact</SecondaryBtn>
+          <SecondaryBtn link="/contact" onClick={() => setIsOpen(false)}>
+            Contact
+          </SecondaryBtn>
           {window.innerWidth <= 800 && (
             <button
               className="nav-click"
@@ -62,7 +70,7 @@ const NavType = ({ isOpen, setIsOpen }) => {
   if (window.innerWidth > 800) {
     return (
       <menu className="nav-links">
-        <NavLinks />
+        <NavLinks setIsOpen={setIsOpen} />
       </menu>
     );
   } else {
@@ -79,21 +87,31 @@ const NavType = ({ isOpen, setIsOpen }) => {
             <RxCross2 />
           </button>
         </div>
-        <NavLinks />
+        <NavLinks setIsOpen={setIsOpen} />
       </menu>
     );
   }
 };
 
 // a menu component to use in the header
-const NavLinks = () => {
+const NavLinks = ({ setIsOpen }) => {
   return (
     <>
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/services">Services</NavLink>
-      <NavLink to="/projects">Projects</NavLink>
-      <NavLink to="/about">About</NavLink>
-      <NavLink to="/faqs">FAQs</NavLink>
+      <NavLink to="/" onClick={() => setIsOpen(false)}>
+        Home
+      </NavLink>
+      <NavLink to="/services" onClick={() => setIsOpen(false)}>
+        Services
+      </NavLink>
+      <NavLink to="/projects" onClick={() => setIsOpen(false)}>
+        Projects
+      </NavLink>
+      <NavLink to="/about" onClick={() => setIsOpen(false)}>
+        About
+      </NavLink>
+      <NavLink to="/faqs" onClick={() => setIsOpen(false)}>
+        FAQs
+      </NavLink>
       {/* ...add more links if want */}
     </>
   );

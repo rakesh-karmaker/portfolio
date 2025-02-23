@@ -16,6 +16,26 @@ const Projects = () => {
 
 const ProjectContainer = () => {
   const [index, setIndex] = useState(0);
+
+  return (
+    <div className="projects-container">
+      <div className="project-list">
+        {projectList.map((project, i) => (
+          <Project
+            key={i}
+            project={project}
+            index={index}
+            setIndex={setIndex}
+            elemIndex={i}
+          />
+        ))}
+      </div>
+      {window.innerWidth > 1080 && <ProjectImg index={index} />}
+    </div>
+  );
+};
+
+const ProjectImg = ({ index }) => {
   const [imageSrc, setImageSrc] = useState("");
   const imgRef = useRef(null);
 
@@ -36,25 +56,12 @@ const ProjectContainer = () => {
   }, [index]);
 
   return (
-    <div className="projects-container">
-      <div className="project-list">
-        {projectList.map((project, i) => (
-          <Project
-            key={i}
-            project={project}
-            index={index}
-            setIndex={setIndex}
-            elemIndex={i}
-          />
-        ))}
-      </div>
-      <img
-        ref={imgRef}
-        src={imageSrc}
-        alt={projectList[index].title}
-        className={"project-img"}
-      />
-    </div>
+    <img
+      ref={imgRef}
+      src={imageSrc}
+      alt={projectList[index].title}
+      className={"project-img"}
+    />
   );
 };
 
@@ -68,14 +75,23 @@ const Project = ({ project, index, setIndex, elemIndex }) => {
     >
       <div className="project-info">
         <h3 className="project-name">{project.title}</h3>
-        <div>
-          <p className="project-description">{project.description}</p>
-          <Link to={project.link} target="_blank" className="project-link">
-            View Project
-          </Link>
+        <div className="wrapper">
+          <div className="inner">
+            <p className="project-description">{project.description}</p>
+            <Link to={project.link} target="_blank" className="project-link">
+              View Project
+            </Link>
+            {window.innerWidth < 1080 && (
+              <img
+                src={"/projects/" + project.image}
+                alt={project.title}
+                className="project-img"
+              />
+            )}
+          </div>
         </div>
       </div>
-      <ProgressBar index={index} setIndex={setIndex} elemIndex={elemIndex} />
+      <ProgressBar index={index} elemIndex={elemIndex} setIndex={setIndex} />
     </div>
   );
 };
