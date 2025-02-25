@@ -15,10 +15,13 @@ const Starter = () => {
     const tl = gsap
       .timeline()
       .to(".starter-text", { autoAlpha: 0, duration: 0.3, delay: 0.3 })
-      .to(".starter", { y: "-100vh", duration: 0.3, ease: "power1.out" });
+      .to(".starter", { y: "-100vh", duration: 0.3, ease: "power1.out" })
+      .set(".starter", { display: "none" });
 
     if (!tl.isActive()) {
-      setStart(true);
+      setTimeout(() => {
+        setStart(true);
+      }, 600);
     }
   }, [completed]);
 

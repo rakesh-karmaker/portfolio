@@ -67,6 +67,7 @@
     )
     /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
   filter: blur(84.25px);
+  z-index: -1;
 }
 
 @media screen and (max-width: 1650px) {

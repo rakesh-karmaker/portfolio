@@ -116,3 +116,42 @@ export const projectList = [
     image: "colorize.png",
   },
 ];
+
+// list of designs
+export const designList = [
+  {
+    title: "Checkout",
+    description:
+      "This page is designed for checking out your products bought from Astro Mart which, a high quality e-commerce website for delivering fresh and high quality products.",
+    link: "https://dribbble.com/shots/24742304-Astro-Checkout-page",
+    image: "checkout.png",
+  },
+  {
+    title: "Admin Panel",
+    description:
+      "The MSCSC Admin Panel streamlines website management, enabling efficient updates to events  and content. A simple and user-friendly tool for the team to keep the site dynamic.",
+    link: "https://dribbble.com/shots/25495804-MSCSC",
+    image: "admin_panel.png",
+  },
+  {
+    title: "MSCSC",
+    description:
+      "The Monipur School and College Science Club (MSCSC) website is a dynamic platform designed to inspire students through science, math, and space exploration.",
+    link: "https://dribbble.com/shots/25495804-MSCSC",
+    image: "mscsc.png",
+  },
+  {
+    title: "Weather Compass",
+    description:
+      "Stay on top of the weather with my newly launched web app, crafted using the power of Node.js, Express, and EJS! Get real-time forecasts for any city.",
+    link: "https://dribbble.com/shots/24720216-Weather-Compass",
+    image: "weather_compass.png",
+  },
+  {
+    title: "Vidshop-website",
+    description:
+      "your go-to destination for affordable and customized website solutions. Explore the opportunity to create your own website with ease and cost-effectiveness.",
+    link: "https://dribbble.com/shots/23352201-VidShop-Website",
+    image: "vidshop_website.png",
+  },
+];

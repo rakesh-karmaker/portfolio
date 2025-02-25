@@ -1,0 +1,48 @@
+.design {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+}
+
+.designs-swiper {
+  width: 100%; /* Ensure the swiper takes the full width of its container */
+  display: flex;
+  justify-content: center; /* Center the slides */
+}
+
+.design-slide {
+  width: 700px; /* Set a fixed width for each slide */
+}
+
+.design-link {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  align-self: flex-start;
+  transition: 0.25s;
+}
+
+.design-link > svg {
+  transition: 0.25s;
+}
+
+.design-link:hover {
+  color: var(--lighter-white);
+}
+
+.design-link:hover > svg {
+  transform: translateX(5px);
+}
+
+@media screen and (max-width: 1600px) {
+  .design-slide {
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .design-slide {
+    width: 70vw;
+  }
+}

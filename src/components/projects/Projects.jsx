@@ -16,6 +16,16 @@ const Projects = () => {
 
 const ProjectContainer = () => {
   const [index, setIndex] = useState(0);
+  const [canSnap, setCanSnap] = useState(false);
+
+  useEffect(() => {
+    if (window.innerWidth < 1080 && canSnap) {
+      const project = document.getElementById(projectList[index].id);
+      setTimeout(() => {
+        project.scrollIntoView({ behavior: "smooth" });
+      }, 250);
+    }
+  }, [index]);
 
   return (
     <div className="projects-container">
@@ -27,6 +37,8 @@ const ProjectContainer = () => {
             index={index}
             setIndex={setIndex}
             elemIndex={i}
+            setCanSnap={setCanSnap}
+            canSnap={canSnap}
           />
         ))}
       </div>
@@ -65,15 +77,23 @@ const ProjectImg = ({ index }) => {
   );
 };
 
-const Project = ({ project, index, setIndex, elemIndex }) => {
+const Project = ({
+  project,
+  index,
+  setIndex,
+  elemIndex,
+  canSnap,
+  setCanSnap,
+}) => {
   return (
     <div
       className={"project" + (index === elemIndex ? " active" : "")}
       onClick={() => {
         setIndex(elemIndex);
+        !canSnap && setCanSnap(true);
       }}
     >
-      <div className="project-info">
+      <div className="project-info" id={project.id}>
         <h3 className="project-name">{project.title}</h3>
         <div className="wrapper">
           <div className="inner">
@@ -91,12 +111,18 @@ const Project = ({ project, index, setIndex, elemIndex }) => {
           </div>
         </div>
       </div>
-      <ProgressBar index={index} elemIndex={elemIndex} setIndex={setIndex} />
+      <ProgressBar
+        index={index}
+        elemIndex={elemIndex}
+        setIndex={setIndex}
+        canSnap={canSnap}
+        setCanSnap={setCanSnap}
+      />
     </div>
   );
 };
 
-const ProgressBar = ({ index, setIndex, elemIndex }) => {
+const ProgressBar = ({ index, setIndex, elemIndex, canSnap, setCanSnap }) => {
   const [width, setWidth] = useState(0);
   const progressBarRef = useRef(null);
 
@@ -118,6 +144,7 @@ const ProgressBar = ({ index, setIndex, elemIndex }) => {
                   clearInterval(progressInterval);
                   setWidth(0);
                   setIndex(index === projectList.length - 1 ? 0 : index + 1);
+                  !canSnap && setCanSnap(true);
                   return prevWidth;
                 }
                 return prevWidth + 1;

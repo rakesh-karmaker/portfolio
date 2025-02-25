@@ -3,6 +3,7 @@ import "./home.css";
 import Services from "@/components/services/Services";
 import { useEffect, useRef } from "react";
 import Projects from "@/components/projects/Projects";
+import Designs from "@/components/designs/Designs";
 
 // the home page
 const Home = ({ section }) => {
@@ -26,6 +27,7 @@ const Home = ({ section }) => {
       <Hero />
       <Services />
       <Projects />
+      <Designs />
     </main>
   );
 };

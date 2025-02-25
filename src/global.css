@@ -93,6 +93,12 @@ a {
   }
 }
 
+@media screen and (max-width: 1080px) {
+  .section {
+    scroll-margin-top: 50px;
+  }
+}
+
 @media screen and (max-width: 800px) {
   body {
     --nav-height: 70px;
