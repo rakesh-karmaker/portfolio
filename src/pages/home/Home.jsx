@@ -4,6 +4,7 @@ import Services from "@/components/services/Services";
 import { useEffect, useRef } from "react";
 import Projects from "@/components/projects/Projects";
 import Designs from "@/components/designs/Designs";
+import About from "@/components/about/About";
 
 // the home page
 const Home = ({ section }) => {
@@ -28,6 +29,7 @@ const Home = ({ section }) => {
       <Services />
       <Projects />
       <Designs />
+      <About />
     </main>
   );
 };

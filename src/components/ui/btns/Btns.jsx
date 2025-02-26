@@ -9,6 +9,14 @@ const PrimaryBtn = ({ children, link }) => {
   );
 };
 
+const PrimaryButton = ({ children, onClick }) => {
+  return (
+    <button className="primary-btn btn" onClick={onClick}>
+      {children}
+    </button>
+  );
+};
+
 const SecondaryBtn = ({ children, link }) => {
   return (
     <NavLink to={link} className="secondary-btn btn">
@@ -17,4 +25,4 @@ const SecondaryBtn = ({ children, link }) => {
   );
 };
 
-export { PrimaryBtn, SecondaryBtn };
+export { PrimaryBtn, PrimaryButton, SecondaryBtn };

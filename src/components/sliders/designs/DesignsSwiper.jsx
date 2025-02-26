@@ -14,8 +14,10 @@ const DesignsSwiper = ({ designSliderRef, setIndex, index }) => {
       : (90 * window.innerWidth) / 100;
 
   const offset = (window.innerWidth - maxWidth) / 2;
+
   return (
     <Swiper
+      //* configuration for the designs swiper
       onSwiper={(swiper) => {
         designSliderRef.current = swiper;
       }}

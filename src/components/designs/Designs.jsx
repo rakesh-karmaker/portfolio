@@ -7,32 +7,37 @@ import DesignsSwiper from "@/components/sliders/designs/DesignsSwiper";
 import "./designs.css";
 
 const Designs = () => {
-  const [index, setIndex] = useState(0);
-  const designSliderRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const sliderRef = useRef(null);
 
   useEffect(() => {
-    if (designSliderRef.current) {
-      designSliderRef.current.slideTo(index);
+    if (sliderRef.current) {
+      try {
+        sliderRef.current.slideTo(currentIndex);
+      } catch (error) {
+        console.error("Error sliding to current index:", error);
+      }
     }
-  }, [index]);
+  }, [currentIndex]);
 
   return (
     <section className="designs-container" id="designs">
-      <DesignsHeader index={index} setIndex={setIndex} />
+      <DesignsHeader index={currentIndex} setIndex={setCurrentIndex} />
       <DesignsSwiper
-        designSliderRef={designSliderRef}
-        index={index}
-        setIndex={setIndex}
+        designSliderRef={sliderRef}
+        index={currentIndex}
+        setIndex={setCurrentIndex}
       />
     </section>
   );
 };
 
 const DesignsHeader = ({ index, setIndex }) => {
-  const handleLeftClick = () => {
+  const navigateLeft = () => {
     setIndex((prevIndex) => Math.max(prevIndex - 1, 0));
   };
-  const handleRightClick = () => {
+
+  const navigateRight = () => {
     setIndex((prevIndex) => Math.min(prevIndex + 1, designList.length - 1));
   };
 
@@ -46,7 +51,7 @@ const DesignsHeader = ({ index, setIndex }) => {
         <div className="designs-nav-buttons">
           <button
             className="designs-nav-btn"
-            onClick={handleLeftClick}
+            onClick={navigateLeft}
             type="button"
             disabled={index === 0}
           >
@@ -54,7 +59,7 @@ const DesignsHeader = ({ index, setIndex }) => {
           </button>
           <button
             className="designs-nav-btn"
-            onClick={handleRightClick}
+            onClick={navigateRight}
             type="button"
             disabled={index + 1 === designList.length}
           >

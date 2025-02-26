@@ -155,3 +155,10 @@ export const designList = [
     image: "vidshop_website.png",
   },
 ];
+
+// list of about data
+export const aboutDataList = [
+  "I’ve spent the last 3+ years learning and working across different areas of development: front-end development, back-end development, UI/UX design and currently working for Monipur School and College Science Club as a Web developer",
+  "These days my time is spent researching, designing, building websites, and coding. I also love to learn and experiment with new things.",
+  "My mission is to help small and medium-sized businesses grow their audience and brand recognition by providing them a stylish and modern-looking, fully functional website",
+];
