@@ -42,7 +42,8 @@ const FooterRight = () => {
         </div>
       </div>
       <p className="copyright">
-        Copyright © 2021 Rakesh Karmaker - All rights reserved || Designed By:{" "}
+        Copyright © {new Date().getFullYear()} Rakesh Karmaker - All rights
+        reserved || Designed By:{" "}
         <Link to="https://github.com/rakesh-karmaker">Rakesh</Link>
       </p>
     </div>
