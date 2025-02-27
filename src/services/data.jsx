@@ -162,3 +162,37 @@ export const aboutDataList = [
   "These days my time is spent researching, designing, building websites, and coding. I also love to learn and experiment with new things.",
   "My mission is to help small and medium-sized businesses grow their audience and brand recognition by providing them a stylish and modern-looking, fully functional website",
 ];
+
+// list of faqs
+export const faqsList = [
+  {
+    question: "Who are you, and what do you do?",
+    answer:
+      "I am a web developer and designer with over three years of experience in front-end and back-end development, as well as UI/UX design. I currently work as a web developer for Monipur School and College Science Club, where I design and build engaging digital experiences.",
+  },
+  {
+    question: "What services do you provide?",
+    answer:
+      "I specialize in designing and developing modern, responsive, and high-performance websites tailored to the needs of businesses and organizations. My services include front-end and back-end development, UI/UX design, website optimization, and ongoing maintenance.",
+  },
+  {
+    question: "What technologies do you work with?",
+    answer:
+      "I work with a variety of technologies, including ReactJS, Next.js, Node.js, Bun, and more. My expertise also extends to UI/UX principles, ensuring visually appealing and user-friendly designs.",
+  },
+  {
+    question: "How do you approach a new project?",
+    answer:
+      "Each project begins with a thorough understanding of the client’s goals and audience. I follow a structured approach that includes research, wireframing, design, development, testing, and deployment, ensuring a seamless and efficient process from start to finish.",
+  },
+  {
+    question: "Can you redesign an existing website?",
+    answer:
+      "Absolutely! I can enhance the design, improve performance, and implement new features to modernize your website and align it with current web standards.",
+  },
+  {
+    question: "How can I collaborate with you on a project?",
+    answer:
+      "You can reach out to me via email or through my portfolio website. I’d be happy to discuss your project and how I can help bring your vision to life.",
+  },
+];

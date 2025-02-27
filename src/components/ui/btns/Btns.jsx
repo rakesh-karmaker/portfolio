@@ -9,9 +9,10 @@ const PrimaryBtn = ({ children, link }) => {
   );
 };
 
-const PrimaryButton = ({ children, onClick }) => {
+const PrimaryButton = ({ children, ...rest }) => {
+  console.log(rest);
   return (
-    <button className="primary-btn btn" onClick={onClick}>
+    <button className="primary-btn btn" onClick={rest?.onClick} {...rest}>
       {children}
     </button>
   );

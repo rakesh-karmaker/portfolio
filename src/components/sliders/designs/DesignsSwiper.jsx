@@ -15,6 +15,8 @@ const DesignsSwiper = ({ designSliderRef, setIndex, index }) => {
 
   const offset = (window.innerWidth - maxWidth) / 2;
 
+  console.log(window.innerWidth > 950 && window.innerWidth < 1250);
+
   return (
     <Swiper
       //* configuration for the designs swiper
@@ -30,7 +32,7 @@ const DesignsSwiper = ({ designSliderRef, setIndex, index }) => {
       slidesOffsetBefore={
         window.innerWidth > 950 && window.innerWidth < 1250
           ? 50
-          : index === 0
+          : index === 0 && window.innerWidth > 950
           ? offset
           : 0
       }

@@ -6,7 +6,7 @@
   justify-content: space-between;
   align-self: center;
   align-items: center;
-  padding: max(5vw, 75px) 0px;
+  margin: max(5vw, 75px) 0px;
   font-size: 1rem;
 }
 

@@ -1,0 +1,85 @@
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  width: 100%;
+  max-width: 780px;
+}
+
+.contact-form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3.625em;
+  width: 100%;
+}
+
+.combined-inputs {
+  width: 100%;
+  display: flex;
+  gap: 2.125em;
+}
+
+.text-input {
+  width: 100%;
+  position: relative;
+}
+
+.text-input > input,
+.contact-form textarea {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--light-gray);
+  width: 100%;
+  color: var(--white);
+  padding-bottom: 16px;
+}
+
+.text-input label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: 400;
+  font-size: 1.07em;
+  line-height: 1.5em;
+  color: var(--white);
+  transition: 0.25s;
+}
+
+.text-input input:focus + label,
+.text-input input:not(:placeholder-shown) + label,
+.text-input label.filled {
+  transform: translateY(-1.5em);
+  font-size: 0.75em;
+  color: var(--light-gray);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+@media screen and (max-width: 1080px) {
+  .contact-form {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .combined-inputs {
+    flex-direction: column;
+    gap: 3.625em;
+  }
+}
