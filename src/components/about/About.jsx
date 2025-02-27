@@ -6,7 +6,13 @@ import "./about.css";
 const About = () => {
   return (
     <section className="about-container section" id="about">
-      <img src="/pfp.png" className="pfp" />
+      <img
+        src="/pfp.webp"
+        className="pfp"
+        alt="a picture of rakesh"
+        height="100%"
+        width="100%"
+      />
       <AboutInfo />
     </section>
   );

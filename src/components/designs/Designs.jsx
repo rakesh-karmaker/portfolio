@@ -54,6 +54,7 @@ const DesignsHeader = ({ index, setIndex }) => {
             onClick={navigateLeft}
             type="button"
             disabled={index === 0}
+            aria-label="previous design"
           >
             <FaArrowLeft />
           </button>
@@ -62,6 +63,7 @@ const DesignsHeader = ({ index, setIndex }) => {
             onClick={navigateRight}
             type="button"
             disabled={index + 1 === designList.length}
+            aria-label="next design"
           >
             <FaArrowRight />
           </button>

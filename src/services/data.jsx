@@ -89,7 +89,7 @@ export const projectList = [
     description:
       "A vibrant ReactJS website for MSCSC, celebrating science, math, and space exploration. The platform features engaging events, exclusive member profiles, and interactive content that inspires curiosity and fosters learning.",
     link: "https://www.facebook.com/MSCSC2014/posts/pfbid02KYMvhF1ERzfb7ZgkoMM9f6xagKRcPNoJgeo3uVfiEoEfFA1D3i9ecF9xDXGNoa4Wl",
-    image: "mscsc.png",
+    image: "mscsc.webp",
   },
   {
     id: 2,
@@ -97,7 +97,7 @@ export const projectList = [
     description:
       "Stay on top of the weather with my newly launched web app, crafted using the power of Node.js, Express, and EJS! Get real-time forecasts, detailed hourly updates, and the latest weather trends for any city.",
     link: "https://weather-compass.onrender.com/",
-    image: "weather_compass.png",
+    image: "weather_compass.webp",
   },
   {
     id: 3,
@@ -105,7 +105,7 @@ export const projectList = [
     description:
       "Astro Fest 1.0 is an interactive event registration platform designed for astronomy enthusiasts. It allows users to seamlessly register for the festival, explore event details, and stay updated on schedules.",
     link: "https://dribbble.com/shots/24731416-Astro-fest-1-0",
-    image: "astro_fest_1_0.png",
+    image: "astro_fest_1_0.webp",
   },
   {
     id: 4,
@@ -113,7 +113,7 @@ export const projectList = [
     description:
       "Colorize is a sleek and intuitive color palette generator designed to help designers and creatives find the perfect color combinations. With just a click, it generates stunning, harmonious palettes, making it easy to create visually appealing designs.",
     link: "https://dribbble.com/shots/25669207-Colorize",
-    image: "colorize.png",
+    image: "colorize.webp",
   },
 ];
 
@@ -124,35 +124,35 @@ export const designList = [
     description:
       "This page is designed for checking out your products bought from Astro Mart which, a high quality e-commerce website for delivering fresh and high quality products.",
     link: "https://dribbble.com/shots/24742304-Astro-Checkout-page",
-    image: "checkout.png",
+    image: "checkout.webp",
   },
   {
     title: "Admin Panel",
     description:
       "The MSCSC Admin Panel streamlines website management, enabling efficient updates to events  and content. A simple and user-friendly tool for the team to keep the site dynamic.",
     link: "https://dribbble.com/shots/25495804-MSCSC",
-    image: "admin_panel.png",
+    image: "admin_panel.webp",
   },
   {
     title: "MSCSC",
     description:
       "The Monipur School and College Science Club (MSCSC) website is a dynamic platform designed to inspire students through science, math, and space exploration.",
     link: "https://dribbble.com/shots/25495804-MSCSC",
-    image: "mscsc.png",
+    image: "mscsc.webp",
   },
   {
     title: "Weather Compass",
     description:
       "Stay on top of the weather with my newly launched web app, crafted using the power of Node.js, Express, and EJS! Get real-time forecasts for any city.",
     link: "https://dribbble.com/shots/24720216-Weather-Compass",
-    image: "weather_compass.png",
+    image: "weather_compass.webp",
   },
   {
     title: "Vidshop-website",
     description:
       "your go-to destination for affordable and customized website solutions. Explore the opportunity to create your own website with ease and cost-effectiveness.",
     link: "https://dribbble.com/shots/23352201-VidShop-Website",
-    image: "vidshop_website.png",
+    image: "vidshop_website.webp",
   },
 ];
 

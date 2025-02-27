@@ -73,6 +73,8 @@ const ProjectImg = ({ index }) => {
       src={imageSrc}
       alt={projectList[index].title}
       className={"project-img"}
+      height={"100%"}
+      width={"100%"}
     />
   );
 };
@@ -106,6 +108,8 @@ const Project = ({
                 src={"/projects/" + project.image}
                 alt={project.title}
                 className="project-img"
+                height={"100%"}
+                width={"100%"}
               />
             )}
           </div>

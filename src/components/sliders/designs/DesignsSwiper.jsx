@@ -14,9 +14,6 @@ const DesignsSwiper = ({ designSliderRef, setIndex, index }) => {
       : (90 * window.innerWidth) / 100;
 
   const offset = (window.innerWidth - maxWidth) / 2;
-
-  console.log(window.innerWidth > 950 && window.innerWidth < 1250);
-
   return (
     <Swiper
       //* configuration for the designs swiper
@@ -45,12 +42,17 @@ const DesignsSwiper = ({ designSliderRef, setIndex, index }) => {
       {designList.map((design) => (
         <SwiperSlide key={design.title} className="design-slide">
           <div className="design">
-            <img src={"/designs/" + design.image} alt={design.title} />
+            <img
+              src={"/designs/" + design.image}
+              alt={design.title}
+              height="100%"
+              width="100%"
+            />
             <p className="design-info">
               {design.title}, {design.description}
             </p>
             <Link to={design.link} target="_blank" className="design-link">
-              Learn more <FaArrowRightLong />
+              See Design <FaArrowRightLong />
             </Link>
           </div>
         </SwiperSlide>

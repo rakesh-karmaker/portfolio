@@ -122,6 +122,7 @@ footer .info pre {
 
 .copyright a {
   transition: 0.25s;
+  text-decoration: underline;
 }
 
 .copyright a:hover {
