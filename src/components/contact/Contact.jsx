@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom";
-import { iconData } from "@/services/data";
 import ContactForm from "@/components/forms/contact/ContactForm";
+import SocialIcons from "@/components/ui/socialIcons/SocialIcons";
 
 import "./contact.css";
 
@@ -25,31 +24,6 @@ const ContactInfo = () => {
         ready to answer any question that interests you.
       </p>
       <SocialIcons bg="black" />
-    </div>
-  );
-};
-
-const SocialIcons = ({ bg }) => {
-  return (
-    <div className="social-icons">
-      {iconData.map((icon) => {
-        return (
-          <Link
-            to={icon.link}
-            key={icon.title}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="icon"
-            style={{
-              backgroundColor:
-                bg === "black" ? "var(--black)" : "var(--light-black)",
-            }}
-            title={icon.title}
-          >
-            {icon.icon}
-          </Link>
-        );
-      })}
     </div>
   );
 };

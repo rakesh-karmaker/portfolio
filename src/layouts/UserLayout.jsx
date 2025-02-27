@@ -1,8 +1,8 @@
 import IconBar from "@/components/ui/iconBar/IconBar";
-import { useRender } from "@/contexts/RenderContext";
 import Header from "@/layouts/header/Header";
 import { Outlet } from "react-router-dom";
 import Starter from "./starter/Starter";
+import Footer from "./footer/Footer";
 
 const UserLayout = () => {
   return (
@@ -11,6 +11,7 @@ const UserLayout = () => {
       <Header />
       <Outlet />
       {window.innerWidth > 800 && <IconBar />}
+      <Footer />
     </>
   );
 };

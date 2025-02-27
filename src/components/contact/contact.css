@@ -43,28 +43,6 @@
   margin-bottom: 20px;
 }
 
-.social-icons {
-  display: flex;
-  gap: 12px;
-}
-
-.social-icons .icon {
-  width: 41px;
-  aspect-ratio: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: 0.25s;
-  font-size: 19px;
-}
-
-.social-icons .icon:hover {
-  background-color: var(--white) !important;
-  color: var(--black);
-}
-
 @media screen and (max-width: 1300px) {
   .contact-subtitle {
     font-weight: 500;

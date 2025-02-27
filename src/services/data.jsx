@@ -196,3 +196,52 @@ export const faqsList = [
       "You can reach out to me via email or through my portfolio website. I’d be happy to discuss your project and how I can help bring your vision to life.",
   },
 ];
+
+export const contactInfo = [
+  {
+    title: "Email",
+    text: "rakeshkarmaker0175@gmail.com",
+    link: "mailto:rakeshkarmaker0175@gmail.com",
+  },
+  {
+    title: "Phone",
+    text: "(880) 1756-170957",
+    link: "tel:01756-170957",
+  },
+  {
+    title: "Address",
+    text: `East Kazipara, Mirpur
+Dhaka, Bangladesh`,
+  },
+];
+
+export const pages = [
+  {
+    title: "Home",
+    link: "/",
+  },
+  {
+    title: "Services",
+    link: "/services",
+  },
+  {
+    title: "Projects",
+    link: "/projects",
+  },
+  {
+    title: "Designs",
+    link: "/designs",
+  },
+  {
+    title: "About me",
+    link: "/about",
+  },
+  {
+    title: "FAQs",
+    link: "/faqs",
+  },
+  {
+    title: "Contact",
+    link: "/contact",
+  },
+];
