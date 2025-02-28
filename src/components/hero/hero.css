@@ -11,6 +11,7 @@
   min-height: 100%;
   font-size: 1rem;
   max-height: 1000px;
+  scroll-margin-top: 100px !important;
 }
 
 .hero-intro {

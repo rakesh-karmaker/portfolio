@@ -1,10 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
-const Scrambler = ({ text, speed = 55, ...rest }) => {
+const Scrambler = ({ text, speed = 55, canRun = true, ...rest }) => {
   const [currentText, setCurrentText] = useState("");
+  const scramblerRef = useRef(null);
+  const [inView, setInView] = useState(false);
   const letters = "abcdefghijklmnopqrstuvwxyz";
 
   useEffect(() => {
+    if (!inView || !canRun) return;
     let iterations = 0;
     const interval = setInterval(() => {
       setCurrentText((prev) => {
@@ -22,16 +25,33 @@ const Scrambler = ({ text, speed = 55, ...rest }) => {
       if (iterations >= text.length) {
         clearInterval(interval);
         setCurrentText(text);
-        rest?.setCompleted(true);
+        rest?.setCompleted && rest.setCompleted(true);
       } else {
         iterations++;
       }
     }, speed);
 
     return () => clearInterval(interval);
-  }, [text, speed]);
+  }, [text, speed, inView, canRun]);
 
-  return <span>{currentText}</span>;
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setInView(true);
+          }
+        });
+      },
+      {
+        threshold: 0.8,
+      }
+    );
+    observer.observe(scramblerRef.current);
+    return () => observer.disconnect();
+  }, [scramblerRef, canRun]);
+
+  return <span ref={scramblerRef}>{currentText}</span>;
 };
 
 export default Scrambler;

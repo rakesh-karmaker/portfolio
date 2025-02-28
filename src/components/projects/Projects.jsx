@@ -4,11 +4,35 @@ import { Link } from "react-router-dom";
 import "./projects.css";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import Scrambler from "@/utils/Scrambler";
+import { useRender } from "@/contexts/RenderContext";
 
 const Projects = () => {
+  const { start } = useRender();
+  const [complete, setComplete] = useState(false);
+
+  useGSAP(() => {
+    gsap.set(".projects-container", { autoAlpha: 0, y: 100 });
+    if (!start || !complete) return null;
+
+    gsap.to(".projects-container", {
+      autoAlpha: 1,
+      y: 0,
+      duration: 0.6,
+      ease: "power1.out",
+    });
+  }, [start, complete]);
+
   return (
     <section className="projects section" id="projects">
-      <h2 className="projects-title">Projects I've Created for My Clients</h2>
+      <h2 className="projects-title">
+        <Scrambler
+          text={"Projects I've Created for My Clients"}
+          speed={25}
+          canRun={start}
+          setCompleted={setComplete}
+        />
+      </h2>
       <ProjectContainer />
     </section>
   );

@@ -16,7 +16,8 @@ const Starter = () => {
       .timeline()
       .to(".starter-text", { autoAlpha: 0, duration: 0.3, delay: 0.3 })
       .to(".starter", { y: "-100vh", duration: 0.3, ease: "power1.out" })
-      .set(".starter", { display: "none" });
+      .set(".starter", { display: "none" })
+      .set("body", { overflow: "auto", height: "auto" });
 
     if (!tl.isActive()) {
       setTimeout(() => {

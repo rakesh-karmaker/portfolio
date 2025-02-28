@@ -10,7 +10,6 @@ const PrimaryBtn = ({ children, link }) => {
 };
 
 const PrimaryButton = ({ children, ...rest }) => {
-  console.log(rest);
   return (
     <button className="primary-btn btn" onClick={rest?.onClick} {...rest}>
       {children}

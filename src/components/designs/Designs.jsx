@@ -5,9 +5,12 @@ import { FaArrowRight } from "react-icons/fa";
 import DesignsSwiper from "@/components/sliders/designs/DesignsSwiper";
 
 import "./designs.css";
+import Scrambler from "@/utils/Scrambler";
+import { useRender } from "@/contexts/RenderContext";
 
 const Designs = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [completed, setCompleted] = useState(false);
   const sliderRef = useRef(null);
 
   useEffect(() => {
@@ -22,17 +25,23 @@ const Designs = () => {
 
   return (
     <section className="designs-container" id="designs">
-      <DesignsHeader index={currentIndex} setIndex={setCurrentIndex} />
+      <DesignsHeader
+        index={currentIndex}
+        setIndex={setCurrentIndex}
+        setCompleted={setCompleted}
+      />
       <DesignsSwiper
         designSliderRef={sliderRef}
         index={currentIndex}
         setIndex={setCurrentIndex}
+        completed={completed}
       />
     </section>
   );
 };
 
-const DesignsHeader = ({ index, setIndex }) => {
+const DesignsHeader = ({ index, setIndex, setCompleted }) => {
+  const { start } = useRender();
   const navigateLeft = () => {
     setIndex((prevIndex) => Math.max(prevIndex - 1, 0));
   };
@@ -43,7 +52,14 @@ const DesignsHeader = ({ index, setIndex }) => {
 
   return (
     <div className="designs-header">
-      <h2>Creative Designs Made for My Clients</h2>
+      <h2>
+        <Scrambler
+          text={"Creative Designs Made for My Clients"}
+          speed={30}
+          canRun={start}
+          setCompleted={setCompleted}
+        />
+      </h2>
       <div className="designs-slider-nav">
         <p className="length">
           <span>{index + 1}</span> / <span>{designList.length}</span>

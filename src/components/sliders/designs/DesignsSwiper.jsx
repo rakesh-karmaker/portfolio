@@ -4,8 +4,10 @@ import "./designsSwiper.css";
 import { designList } from "@/services/data";
 import { Link } from "react-router-dom";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
-const DesignsSwiper = ({ designSliderRef, setIndex, index }) => {
+const DesignsSwiper = ({ designSliderRef, setIndex, index, completed }) => {
   const maxWidth =
     window
       .getComputedStyle(document.body)
@@ -14,6 +16,20 @@ const DesignsSwiper = ({ designSliderRef, setIndex, index }) => {
       : (90 * window.innerWidth) / 100;
 
   const offset = (window.innerWidth - maxWidth) / 2;
+
+  useGSAP(() => {
+    gsap.set(".design", { autoAlpha: 0, scale: 0.8 });
+    if (!completed) return null;
+
+    gsap.to(".design", {
+      autoAlpha: 1,
+      scale: 1,
+      duration: 0.3,
+      ease: "power1.inOut",
+      stagger: 0.2,
+    });
+  }, [completed]);
+
   return (
     <Swiper
       //* configuration for the designs swiper

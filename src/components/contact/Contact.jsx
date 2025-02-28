@@ -2,6 +2,7 @@ import ContactForm from "@/components/forms/contact/ContactForm";
 import SocialIcons from "@/components/ui/socialIcons/SocialIcons";
 
 import "./contact.css";
+import Scrambler from "@/utils/Scrambler";
 
 const Contact = () => {
   return (
@@ -18,7 +19,9 @@ const ContactInfo = () => {
   return (
     <div className="contact-info">
       <p className="contact-subtitle">Contact me</p>
-      <h2 className="contact-title">Get in touch</h2>
+      <h2 className="contact-title">
+        <Scrambler text="Get In Touch" />
+      </h2>
       <p className="contact-text">
         It is very important for us to keep in touch with you, so we are always
         ready to answer any question that interests you.

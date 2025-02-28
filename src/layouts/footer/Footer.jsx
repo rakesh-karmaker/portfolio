@@ -4,6 +4,7 @@ import { contactInfo, pages } from "@/services/data";
 import { Link, NavLink } from "react-router-dom";
 
 import "./footer.css";
+import Scrambler from "@/utils/Scrambler";
 
 const Footer = () => {
   return (
@@ -68,7 +69,9 @@ const FooterInfo = () => {
   return (
     <div className="footer-info">
       <div className="details">
-        <h3>Rakesh Karmaker</h3>
+        <h3>
+          <Scrambler text={"Rakesh Karmaker"} />
+        </h3>
         <div>
           <p>
             I'm a web developer with 3+ years of experience in front-end,
