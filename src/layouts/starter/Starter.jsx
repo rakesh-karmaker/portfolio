@@ -1,6 +1,6 @@
 import Scrambler from "@/utils/Scrambler";
 
-import "./Starter.css";
+import "./starter.css";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useState } from "react";
