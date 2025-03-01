@@ -107,4 +107,7 @@ a {
   body {
     --nav-height: 70px;
   }
+  .section {
+    scroll-margin-top: 10px;
+  }
 }
