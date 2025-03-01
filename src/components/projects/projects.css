@@ -25,7 +25,7 @@
   align-items: flex-start;
 }
 
-.projects-container > img {
+.projects-container .project-img-container > img {
   width: 760px;
   height: 430px;
   aspect-ratio: 76 / 43;

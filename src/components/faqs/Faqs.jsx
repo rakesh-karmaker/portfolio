@@ -51,7 +51,7 @@ const FaqsContainer = ({ activeFaq, setActiveFaq }) => {
 const Faq = ({ faq, index, activeFaq, setActiveFaq }) => {
   return (
     <div
-      className={"faq" + (index === activeFaq ? " open" : "")}
+      className={"faq clickable" + (index === activeFaq ? " open" : "")}
       onClick={() => {
         index === activeFaq ? setActiveFaq(null) : setActiveFaq(index);
       }}

@@ -2,8 +2,16 @@ import { PrimaryButton, SecondaryBtn } from "@/components/ui/btns/Btns";
 import { aboutDataList } from "@/services/data";
 
 import "./about.css";
+import { useGSAP } from "@gsap/react";
+import { useRender } from "@/contexts/RenderContext";
+import initAboutAnimations from "@/components/animations/aboutAnimations";
 
 const About = () => {
+  const { start } = useRender();
+  useGSAP(() => {
+    initAboutAnimations(start);
+  }, [start]);
+
   return (
     <section className="about-container section" id="about">
       <img

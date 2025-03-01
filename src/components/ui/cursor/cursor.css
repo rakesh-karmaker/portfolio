@@ -1,0 +1,16 @@
+#cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background-color: var(--white);
+  border-radius: 50%;
+  z-index: 999999999999;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+
+@media (max-width: 768px) {
+  #cursor {
+    display: none; /* Hide cursor on mobile devices */
+  }
+}

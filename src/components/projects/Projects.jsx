@@ -3,25 +3,20 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./projects.css";
 import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import Scrambler from "@/utils/Scrambler";
 import { useRender } from "@/contexts/RenderContext";
+import {
+  initProjectAnimations,
+  initProjectImageAnimations,
+} from "@/components/animations/projectAnimations";
 
 const Projects = () => {
   const { start } = useRender();
   const [complete, setComplete] = useState(false);
 
   useGSAP(() => {
-    gsap.set(".projects-container", { autoAlpha: 0, y: 100 });
-    if (!start || !complete) return null;
-
-    gsap.to(".projects-container", {
-      autoAlpha: 1,
-      y: 0,
-      duration: 0.6,
-      ease: "power1.out",
-    });
-  }, [start, complete]);
+    initProjectAnimations(complete);
+  }, [complete]);
 
   return (
     <section className="projects section" id="projects">
@@ -73,6 +68,7 @@ const ProjectContainer = () => {
 
 const ProjectImg = ({ index }) => {
   const [imageSrc, setImageSrc] = useState("");
+  const [link, setLink] = useState("");
   const imgRef = useRef(null);
 
   useEffect(() => {
@@ -85,21 +81,20 @@ const ProjectImg = ({ index }) => {
 
   // add an animation to the image when the index changes
   useGSAP(() => {
-    setImageSrc("/projects/" + projectList[index].image);
-    const ele = imgRef.current;
-    gsap.set(ele, { autoAlpha: 0, y: 50 });
-    gsap.to(ele, { autoAlpha: 1, y: 0, duration: 0.5 });
+    initProjectImageAnimations(index, setImageSrc, setLink, imgRef);
   }, [index]);
 
   return (
-    <img
-      ref={imgRef}
-      src={imageSrc}
-      alt={projectList[index].title}
-      className={"project-img"}
-      height={"100%"}
-      width={"100%"}
-    />
+    <Link to={link} target="_blank" className="project-img-container">
+      <img
+        ref={imgRef}
+        src={imageSrc}
+        alt={projectList[index].title}
+        className={"project-img"}
+        height={"100%"}
+        width={"100%"}
+      />
+    </Link>
   );
 };
 
@@ -120,7 +115,7 @@ const Project = ({
       }}
     >
       <div className="project-info" id={project.id}>
-        <h3 className="project-name">{project.title}</h3>
+        <h3 className="project-name clickable">{project.title}</h3>
         <div className="wrapper">
           <div className="inner">
             <p className="project-description">{project.description}</p>
