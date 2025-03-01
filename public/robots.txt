@@ -1,0 +1,4 @@
+user-agent: *
+Allow: /
+
+Sitemap: https://rakesh-karmaker.netlify.app/sitemap.xml
