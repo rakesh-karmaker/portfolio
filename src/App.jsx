@@ -4,7 +4,7 @@ import Cursor from "./components/ui/cursor/Cursor";
 function App() {
   return (
     <>
-      <Cursor />
+      {window.innerWidth > 768 && <Cursor />}
       <Outlet />
     </>
   );

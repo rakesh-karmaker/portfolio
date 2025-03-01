@@ -13,6 +13,7 @@ import UserLayout from "./layouts/UserLayout";
 
 // import contexts
 import { RenderProvider } from "./contexts/RenderContext.jsx";
+import NotFound from "./pages/errors/NotFound.jsx";
 
 // create a router to navigate through the website
 const router = createBrowserRouter([
@@ -40,6 +41,8 @@ const router = createBrowserRouter([
       },
     ],
   },
+  // not found page
+  { path: "*", element: <NotFound /> },
 ]);
 
 // render the app
