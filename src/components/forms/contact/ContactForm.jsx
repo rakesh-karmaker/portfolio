@@ -29,32 +29,34 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={onSubmit} className="contact-form">
-      <div>
-        <div className="combined-inputs">
-          <TextInput name="name">Full name</TextInput>
-          <TextInput name="email" type="email">
-            Email address
-          </TextInput>
+    <div className="contact-form-container">
+      <form onSubmit={onSubmit} className="contact-form">
+        <div>
+          <div className="combined-inputs">
+            <TextInput name="name">Full name</TextInput>
+            <TextInput name="email" type="email">
+              Email address
+            </TextInput>
+          </div>
+
+          <div className="combined-inputs">
+            <TextInput name={"number"} type={"number"}>
+              Phone Number
+            </TextInput>
+            <TextInput name={"subject"}>Subject</TextInput>
+          </div>
+          <textarea
+            name="message"
+            required
+            placeholder="Write your message here"
+          ></textarea>
         </div>
 
-        <div className="combined-inputs">
-          <TextInput name={"number"} type={"number"}>
-            Phone Number
-          </TextInput>
-          <TextInput name={"subject"}>Subject</TextInput>
-        </div>
-        <textarea
-          name="message"
-          required
-          placeholder="Write your message here"
-        ></textarea>
-      </div>
-
-      <PrimaryButton type="submit" disabled={isSUbmitting}>
-        {isSUbmitting ? "Sending..." : "Send Message"}
-      </PrimaryButton>
-    </form>
+        <PrimaryButton type="submit" disabled={isSUbmitting}>
+          {isSUbmitting ? "Sending..." : "Send Message"}
+        </PrimaryButton>
+      </form>
+    </div>
   );
 };
 

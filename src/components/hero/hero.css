@@ -104,6 +104,9 @@
   .hero {
     font-size: 0.5rem;
   }
+  .hero-para {
+    font-size: 1.5em;
+  }
 }
 
 @media screen and (max-width: 650px) {

@@ -63,3 +63,13 @@
     transform: translate(calc(-50% - 0.5rem));
   }
 }
+
+@media screen and (max-width: 800px) {
+  .techs-title {
+    font-size: 1.4em;
+  }
+
+  .techs li {
+    font-size: 1.3em;
+  }
+}

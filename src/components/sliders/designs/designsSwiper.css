@@ -43,6 +43,6 @@
 
 @media screen and (max-width: 700px) {
   .design-slide {
-    width: 70vw;
+    width: var(--max-elements-width);
   }
 }

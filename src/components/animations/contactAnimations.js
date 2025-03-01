@@ -9,6 +9,7 @@ const initContactAnimations = (completed) => {
     autoAlpha: 0,
     x: 35,
   });
+  gsap.set(".contact-form-container", { overflow: "hidden" });
   if (!completed) return null;
 
   gsap
@@ -24,7 +25,8 @@ const initContactAnimations = (completed) => {
       x: 0,
       duration: 0.3,
       ease: "power1.out",
-    });
+    })
+    .set(".contact-form-container", { overflow: "auto" });
 };
 
 export default initContactAnimations;
