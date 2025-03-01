@@ -3,9 +3,17 @@ import { FaPlus } from "react-icons/fa6";
 
 import "./faqs.css";
 import { useState } from "react";
+import { useRender } from "@/contexts/RenderContext";
+import { useGSAP } from "@gsap/react";
+import initFaqAnimations from "@/components/animations/faqAnimations";
 
 const Faqs = () => {
   const [activeFaq, setActiveFaq] = useState(null);
+  const { start } = useRender();
+
+  useGSAP(() => {
+    initFaqAnimations(start);
+  }, [start]);
 
   return (
     <section className="faqs-section section" id="faqs">

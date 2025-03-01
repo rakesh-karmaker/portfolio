@@ -5,11 +5,56 @@ import { Link, NavLink } from "react-router-dom";
 
 import "./footer.css";
 import Scrambler from "@/utils/Scrambler";
+import { useRender } from "@/contexts/RenderContext";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
+  const { start } = useRender();
+  useGSAP(() => {
+    gsap.set(".footer-info .details, .info-section, .copyright > span", {
+      autoAlpha: 0,
+      scale: 0.9,
+    });
+    gsap.set(".footer-info .social-icons", { autoAlpha: 0, y: 50 });
+    if (!start) return;
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: ".footer-right",
+          start: "top 60%",
+        },
+        defaults: {
+          ease: "power1.out",
+        },
+      })
+      .to(".footer-info .details", {
+        autoAlpha: 1,
+        scale: 1,
+        duration: 0.3,
+      })
+      .to(".footer-info .social-icons", {
+        autoAlpha: 1,
+        y: 0,
+        duration: 0.2,
+      })
+      .to(".info-section", {
+        autoAlpha: 1,
+        scale: 1,
+        duration: 0.3,
+      })
+      .to(".copyright > span", {
+        autoAlpha: 1,
+        scale: 1,
+        duration: 0.3,
+      });
+  }, [start]);
   return (
     <footer>
-      <FooterInfo />
+      <FooterInfo canRun={start} />
       <FooterRight />
     </footer>
   );
@@ -43,9 +88,11 @@ const FooterRight = () => {
         </div>
       </div>
       <p className="copyright">
-        Copyright © {new Date().getFullYear()} Rakesh Karmaker - All rights
-        reserved || Designed By:{" "}
-        <Link to="https://github.com/rakesh-karmaker">Rakesh</Link>
+        <span>
+          Copyright © {new Date().getFullYear()} Rakesh Karmaker - All rights
+          reserved || Designed By:{" "}
+          <Link to="https://github.com/rakesh-karmaker">Rakesh</Link>
+        </span>
       </p>
     </div>
   );
@@ -65,12 +112,12 @@ const PagesList = ({ data }) => {
   );
 };
 
-const FooterInfo = () => {
+const FooterInfo = ({ canRun }) => {
   return (
     <div className="footer-info">
       <div className="details">
         <h3>
-          <Scrambler text={"Rakesh Karmaker"} />
+          <Scrambler text={"Rakesh Karmaker"} canRun={canRun} />
         </h3>
         <div>
           <p>
