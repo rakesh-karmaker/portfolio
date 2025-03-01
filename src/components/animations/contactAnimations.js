@@ -26,7 +26,7 @@ const initContactAnimations = (completed) => {
       duration: 0.3,
       ease: "power1.out",
     })
-    .set(".contact-form-container", { overflow: "auto" });
+    .set(".contact-form-container", { overflow: "visible" });
 };
 
 export default initContactAnimations;
