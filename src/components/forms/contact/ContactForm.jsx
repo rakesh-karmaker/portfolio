@@ -1,7 +1,7 @@
 import { PrimaryButton } from "@/components/ui/btns/Btns";
 import React, { useEffect, useRef } from "react";
 
-import "./ContactForm.css";
+import "./contactForm.css";
 
 const ContactForm = () => {
   const [isSUbmitting, setIsSubmitting] = React.useState(false);

@@ -3,7 +3,7 @@ import { SplitText } from "@cyriacbr/react-split-text";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
-import "./TitleSlider.css";
+import "./titleSlider.css";
 
 const Text = ({ className, children }) => {
   return (
