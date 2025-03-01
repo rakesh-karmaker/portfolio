@@ -66,10 +66,10 @@
 
 @media screen and (max-width: 800px) {
   .techs-title {
-    font-size: 1.4em;
+    font-size: 1.5em;
   }
 
   .techs li {
-    font-size: 1.3em;
+    font-size: 1.5em !important;
   }
 }
