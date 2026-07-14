@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://www.yourwebsite.com/</loc>
+    <loc>http://www.rakesh-karmaker.netlify.app/</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://www.yourwebsite.com/services</loc>
+    <loc>http://www.rakesh-karmaker.netlify.app/services</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://www.yourwebsite.com/projects</loc>
+    <loc>http://www.rakesh-karmaker.netlify.app/projects</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://www.yourwebsite.com/designs</loc>
+    <loc>http://www.rakesh-karmaker.netlify.app/designs</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://www.yourwebsite.com/about</loc>
+    <loc>http://www.rakesh-karmaker.netlify.app/about</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://www.yourwebsite.com/faqs</loc>
+    <loc>http://www.rakesh-karmaker.netlify.app/faqs</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://www.yourwebsite.com/contact</loc>
+    <loc>http://www.rakesh-karmaker.netlify.app/contact</loc>
     <priority>0.8</priority>
   </url>
 </urlset>
