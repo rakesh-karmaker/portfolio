@@ -11,7 +11,18 @@
 }
 
 .design-slide {
-  width: 700px; /* Set a fixed width for each slide */
+  width: 600px; /* Set a fixed width for each slide */
+}
+
+.design-img {
+  aspect-ratio: 6/3;
+  height: 400px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.design-info > span {
+  font-weight: 500;
 }
 
 .design-link {
@@ -38,6 +49,10 @@
 @media screen and (max-width: 1600px) {
   .design-slide {
     width: 500px;
+  }
+  .design-img {
+    aspect-ratio: 6/3;
+    height: 340px;
   }
 }
 

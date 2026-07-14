@@ -31,14 +31,14 @@ const DesignsSwiper = ({ designSliderRef, setIndex, index, completed }) => {
         setIndex(swiper.realIndex);
       }}
       slidesPerView={"auto"}
-      spaceBetween={window.innerWidth >= 1600 ? 100 : 50}
+      spaceBetween={window.innerWidth >= 1600 ? 75 : 50}
       className="designs-swiper"
       slidesOffsetBefore={
         window.innerWidth > 950 && window.innerWidth < 1250
           ? 50
           : index === 0 && window.innerWidth > 950
-          ? offset
-          : 0
+            ? offset
+            : 0
       }
       centeredSlides={index === 0 && window.innerWidth > 950 ? false : true}
       allowTouchMove={window.innerWidth > 1250 ? false : true}
@@ -55,10 +55,11 @@ const DesignsSwiper = ({ designSliderRef, setIndex, index, completed }) => {
                 alt={design.title}
                 height="100%"
                 width="100%"
+                className="design-img"
               />
             </Link>
             <p className="design-info">
-              {design.title}, {design.description}
+              <span>{design.title}</span>, {design.description}
             </p>
             <Link to={design.link} target="_blank" className="design-link">
               See Design <FaArrowRightLong />

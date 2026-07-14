@@ -5,10 +5,8 @@ import "./projects.css";
 import { useGSAP } from "@gsap/react";
 import Scrambler from "@/utils/Scrambler";
 import { useRender } from "@/contexts/RenderContext";
-import {
-  initProjectAnimations,
-  initProjectImageAnimations,
-} from "@/components/animations/projectAnimations";
+import { initProjectAnimations } from "@/components/animations/projectAnimations";
+import { ProjectSwiper } from "./ProjectsSwiper";
 
 const Projects = () => {
   const { start } = useRender();
@@ -22,7 +20,7 @@ const Projects = () => {
     <section className="projects section" id="projects">
       <h2 className="projects-title">
         <Scrambler
-          text={"Projects I've Created for My Clients"}
+          text={"Projects I've Built"}
           speed={25}
           canRun={start}
           setCompleted={setComplete}
@@ -61,40 +59,8 @@ const ProjectContainer = () => {
           />
         ))}
       </div>
-      {window.innerWidth > 1080 && <ProjectImg index={index} />}
+      {window.innerWidth > 1080 && <ProjectSwiper index={index} />}
     </div>
-  );
-};
-
-const ProjectImg = ({ index }) => {
-  const [imageSrc, setImageSrc] = useState("");
-  const [link, setLink] = useState("");
-  const imgRef = useRef(null);
-
-  useEffect(() => {
-    // Preload images
-    projectList.forEach((project) => {
-      const img = new Image();
-      img.src = "/projects/" + project.image;
-    });
-  }, []);
-
-  // add an animation to the image when the index changes
-  useGSAP(() => {
-    initProjectImageAnimations(index, setImageSrc, setLink, imgRef);
-  }, [index]);
-
-  return (
-    <Link to={link} target="_blank" className="project-img-container">
-      <img
-        ref={imgRef}
-        src={imageSrc}
-        alt={projectList[index].title}
-        className={"project-img"}
-        height={"100%"}
-        width={"100%"}
-      />
-    </Link>
   );
 };
 
@@ -178,7 +144,7 @@ const ProgressBar = ({ index, setIndex, elemIndex, canSnap, setCanSnap }) => {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (progressBarRef.current) {

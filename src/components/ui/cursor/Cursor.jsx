@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 const Cursor = () => {
   useEffect(() => {
-    gsap.set(cursor, { display: "none" });
+    gsap.set("#cursor", { display: "none" });
     const handleMouseMove = (e) => {
       const cursor = document.getElementById("cursor");
       if (cursor) {
@@ -58,8 +58,8 @@ const Cursor = () => {
       const btnTag = document.querySelectorAll("button");
       const clickTag = document.querySelectorAll(".clickable");
 
-      addScaleEffect(aTag);
-      addScaleEffect(btnTag);
+      addScaleEffect(aTag, 2);
+      addScaleEffect(btnTag, 3);
       addScaleEffect(clickTag, 2.5);
     }
   }, []);

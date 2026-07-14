@@ -93,6 +93,14 @@ export const projectList = [
   },
   {
     id: 2,
+    title: "Explorion - Event Website",
+    description:
+      "This website is crafted for MSCSC, combining futuristic aesthetics with an intuitive user experience. It highlights event details, speakers, and schedules while enabling smooth and effortless ticket booking.",
+    link: "https://mscsc-events.netlify.app/explorion-template",
+    image: "explorion.webp",
+  },
+  {
+    id: 3,
     title: "Weather Compass",
     description:
       "Stay on top of the weather with my newly launched web app, crafted using the power of Node.js, Express, and EJS! Get real-time forecasts, detailed hourly updates, and the latest weather trends for any city.",
@@ -100,31 +108,45 @@ export const projectList = [
     image: "weather_compass.webp",
   },
   {
-    id: 3,
+    id: 4,
     title: "Astro Fest 1.0",
     description:
       "Astro Fest 1.0 is an interactive event registration platform designed for astronomy enthusiasts. It allows users to seamlessly register for the festival, explore event details, and stay updated on schedules.",
     link: "https://dribbble.com/shots/24731416-Astro-fest-1-0",
     image: "astro_fest_1_0.webp",
   },
-  {
-    id: 4,
-    title: "Colorize",
-    description:
-      "Colorize is a sleek and intuitive color palette generator designed to help designers and creatives find the perfect color combinations. With just a click, it generates stunning, harmonious palettes, making it easy to create visually appealing designs.",
-    link: "https://dribbble.com/shots/25669207-Colorize",
-    image: "colorize.webp",
-  },
+  // {
+  //   id: 5,
+  //   title: "Colorize",
+  //   description:
+  //     "Colorize is a sleek and intuitive color palette generator designed to help designers and creatives find the perfect color combinations. With just a click, it generates stunning, harmonious palettes, making it easy to create visually appealing designs.",
+  //   link: "https://dribbble.com/shots/25669207-Colorize",
+  //   image: "colorize.webp",
+  // },
 ];
 
 // list of designs
 export const designList = [
   {
-    title: "Checkout",
+    title: "Whispr",
     description:
-      "This page is designed for checking out your products bought from Astro Mart which, a high quality e-commerce website for delivering fresh and high quality products.",
-    link: "https://dribbble.com/shots/24742304-Astro-Checkout-page",
-    image: "checkout.webp",
+      "Whether you're catching up with a friend, planning with your team, or vibing with your favorite group - Whispr makes it easy. Start direct chats, create group conversations, share your thoughts, and make connections that feel natural.",
+    link: "https://dribbble.com/shots/26240658-Whispr-Chat-App-UI",
+    image: "whispr-chat.webp",
+  },
+  {
+    title: "EdFun Dashboard",
+    description:
+      "A modern and clean student dashboard for an educational platform where users can track progress, earn rewards, and continue learning with ease. Designed for both students and instructors, featuring course tracking, leaderboards, badges, and more.",
+    link: "https://dribbble.com/shots/26083825-EDFUN-Learning-Dashboard-UI",
+    image: "edfun-dashboard.webp",
+  },
+  {
+    title: "Profile Page",
+    description:
+      "Minimalistic and modern profile page design with a clean layout and intuitive navigation. Featuring a balanced use of typography, color, and whitespace to create a user-friendly and visually appealing experience.",
+    link: "https://dribbble.com/shots/25716227-Profile-page",
+    image: "profile-page.webp",
   },
   {
     title: "Admin Panel",
@@ -139,6 +161,13 @@ export const designList = [
       "The Monipur School and College Science Club (MSCSC) website is a dynamic platform designed to inspire students through science, math, and space exploration.",
     link: "https://dribbble.com/shots/25495804-MSCSC",
     image: "mscsc.webp",
+  },
+  {
+    title: "Checkout",
+    description:
+      "This page is designed for checking out your products bought from Astro Mart which, a high quality e-commerce website for delivering fresh and high quality products.",
+    link: "https://dribbble.com/shots/24742304-Astro-Checkout-page",
+    image: "checkout.webp",
   },
   {
     title: "Weather Compass",
@@ -158,7 +187,7 @@ export const designList = [
 
 // list of about data
 export const aboutDataList = [
-  "I’ve spent the last 3+ years learning and working across different areas of development: front-end development, back-end development, UI/UX design and currently working for Monipur School and College Science Club as a Web developer",
+  "I’ve spent the last 3+ years learning and working across different areas of development: front-end development, back-end development, UI/UX design.",
   "These days my time is spent researching, designing, building websites, and coding. I also love to learn and experiment with new things.",
   "My mission is to help small and medium-sized businesses grow their audience and brand recognition by providing them a stylish and modern-looking, fully functional website",
 ];
@@ -205,8 +234,8 @@ export const contactInfo = [
   },
   {
     title: "Phone",
-    text: "(880) 1756-170957",
-    link: "tel:01756-170957",
+    text: "(880) 1886-010238",
+    link: "tel:01886-010238",
   },
   {
     title: "Address",

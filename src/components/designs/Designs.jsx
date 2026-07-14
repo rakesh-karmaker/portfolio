@@ -54,7 +54,7 @@ const DesignsHeader = ({ index, setIndex, setCompleted }) => {
     <div className="designs-header">
       <h2>
         <Scrambler
-          text={"Creative Designs Made for My Clients"}
+          text={"Creative Designs & Interfaces"}
           speed={30}
           canRun={start}
           setCompleted={setCompleted}
