@@ -30,7 +30,7 @@ export const ProjectSwiper = ({ index }) => {
           <img
             src={`/projects/${project.image}`}
             alt={projectList[index].title}
-            className={"project-img"}
+            className={"project-img max-w-[var(--max-elements-width)]!"}
             height={"100%"}
             width={"100%"}
           />
