@@ -20,7 +20,7 @@
 .projects-container {
   width: 100%;
   min-width: 760px;
-  height: 470px;
+  height: 100%;
   display: flex;
   gap: 4em;
   justify-content: space-between;
@@ -152,5 +152,8 @@
     height: 300px;
     position: sticky;
     top: 3em;
+  }
+  .projects-container {
+    min-width: var(--max-elements-width);
   }
 }
